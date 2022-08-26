@@ -7,7 +7,7 @@
     "author": "Savoir-faire Linux, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "category": "Knowledge Management",
+    "category": "Knowledge/Project",
     "depends": ["document_page", "mail"],
     "data": [
         "data/email_template.xml",

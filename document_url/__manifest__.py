@@ -3,7 +3,7 @@
 {
     "name": "URL attachment",
     "version": "14.0.1.1.0",
-    "category": "Tools",
+    "category": "Knowledge/Tools",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",

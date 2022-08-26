@@ -5,14 +5,13 @@
 {
     "name": "Document Page",
     "version": "14.0.1.2.0",
-    "category": "Knowledge Management",
+    "category": "Knowledge/Project",
     "author": "OpenERP SA, Odoo Community Association (OCA)",
     "images": [
         "images/category_list.png",
         "images/create_category.png",
         "images/page_list.png",
         "images/create_page.png",
-        "images/customer_invoice.jpeg",
         "images/page_history.png",
     ],
     "website": "https://github.com/OCA/knowledge",

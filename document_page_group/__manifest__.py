@@ -7,6 +7,7 @@
         Define access groups on documents""",
     "version": "14.0.1.0.0",
     "license": "AGPL-3",
+    "category": "Knowledge/Project",
     "author": "Creu Blanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "depends": ["document_page"],

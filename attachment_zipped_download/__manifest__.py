@@ -3,7 +3,7 @@
 {
     "name": "Attachment Zipped Download",
     "version": "14.0.1.0.0",
-    "category": "Tools",
+    "category": "Knowledge/Project",
     "website": "https://github.com/OCA/knowledge",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",

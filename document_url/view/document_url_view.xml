@@ -6,7 +6,7 @@
         inherit_id="web.assets_backend"
     >
         <xpath expr="." position="inside">
-            <script type="text/javascript" src="/document_url/static/src/js/url.js" />
+            <script type="text/javascript" src="/document_url/static/src/js/url.js"/>
             <link
                 href="/document_url/static/src/scss/document_url.scss"
                 rel="stylesheet"
@@ -27,8 +27,8 @@
         <field name="arch" type="xml">
             <form string="Add URL">
                 <group>
-                    <field name="name" />
-                    <field name="url" widget="url" />
+                    <field name="name"/>
+                    <field name="url" widget="url"/>
                 </group>
                 <footer>
                     <button
@@ -38,7 +38,7 @@
                         type="object"
                     />
                     or
-                    <button special="cancel" string="Cancel" class="oe_link" />
+                    <button special="cancel" string="Cancel" class="oe_link"/>
                 </footer>
             </form>
         </field>
