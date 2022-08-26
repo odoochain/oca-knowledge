@@ -7,7 +7,7 @@
         Include references on document pages""",
     "version": "14.0.1.0.0",
     "license": "AGPL-3",
-    "category": "Knowledge/Management",
+    "category": "Knowledge/Tools",
     "author": "Creu Blanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "depends": ["document_page", "web_editor"],
@@ -17,4 +17,5 @@
         "views/report_document_page.xml",
     ],
     "maintainers": ["etobella"],
+    "installable": True,
 }

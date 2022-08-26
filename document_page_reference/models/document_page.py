@@ -19,7 +19,7 @@ try:
     name_re = re.compile("^%s$" % old_name_re.pattern)
 
     class Context(SandboxedEnvironment.context_class):
-        def resolve(self, key):
+        def resolve_or_missing(self, key):
             res = super().resolve(key)
             if not isinstance(res, Undefined):
                 return res
