@@ -8,7 +8,7 @@
     "Tecnativa, "
     "ForgeFlow, "
     "Odoo Community Association (OCA)",
-    "category": "Knowledge",
+    'category': 'Productivity/Documents',
     "license": "AGPL-3",
     "website": "https://github.com/OCA/knowledge",
     "depends": ["base"],

@@ -6,7 +6,7 @@
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/knowledge",
     "license": "AGPL-3",
-    "category": "Knowledge Management",
+    'category': 'Productivity/Documents',
     "summary": "Allows you to assign tags or keywords to pages and search for "
     "them afterwards",
     "depends": ["document_page"],
