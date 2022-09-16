@@ -15,6 +15,7 @@ class DocumentPage(models.Model):
         column1="document_page_id",
         column2="group_id",
         compute="_compute_group_ids",
+        recursive=True,
     )
     direct_group_ids = fields.Many2many(
         "res.groups",
