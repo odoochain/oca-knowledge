@@ -23,6 +23,7 @@ class DocumentPage(models.Model):
         relation="document_page_group",
         column1="document_page_id",
         column2="group_id",
+        recursive=True,
     )
 
     @api.depends("direct_group_ids", "parent_id", "parent_id.group_ids")

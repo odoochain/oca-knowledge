@@ -23,7 +23,7 @@ Document Page Reference
     :target: https://runbot.odoo-community.org/runbot/118/15.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module allows to add a reference name on documents and simplifies the link
 between document pages.
@@ -82,8 +82,10 @@ promote its widespread use.
 
 Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-etobella| 
+|maintainer-etobella|
 
 This module is part of the `OCA/knowledge <https://github.com/OCA/knowledge/tree/15.0/document_page_reference>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
+
+WARNING odoo15-2 py.warnings: d:\odoochain15\oca\oca-knowledge\document_page_reference\models\document_page.py:21: DeprecationWarning: Overriding 'resolve' is deprecated and will not have the expected behavior in Jinja 3.1. Override 'resolve_or_missing' instead
