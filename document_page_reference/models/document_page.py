@@ -7,6 +7,8 @@ from odoo import _, api, fields, models, tools
 from odoo.exceptions import ValidationError
 from odoo.tools.misc import html_escape
 
+from odoo.addons.http_routing.models.ir_http import slugify
+
 _logger = logging.getLogger(__name__)
 
 try:
@@ -62,19 +64,33 @@ class DocumentPage(models.Model):
     @api.depends("history_head")
     def _compute_content_parsed(self):
         for record in self:
-            record.content_parsed = record.get_content()
+            content = record.get_content()
+            if content == "<p>" and self.content != "<p>":
+                _logger.error(
+                    "Template from page with id = %s cannot be processed correctly"
+                    % self.id
+                )
+                content = self.content
+            record.content_parsed = content
 
     @api.constrains("reference")
     def _check_reference(self):
         for record in self:
             if not record.reference:
                 continue
-            if not name_re.match(record.reference):
-                raise ValidationError(_("Reference is not valid"))
-            if self.search(
-                [("reference", "=", record.reference), ("id", "!=", record.id)]
-            ):
-                raise ValidationError(_("Reference must be unique"))
+            record._validate_reference(record=record)
+
+    @api.model
+    def _validate_reference(self, record=None, reference=None):
+        if not reference:
+            reference = self.reference
+        if not name_re.match(reference):
+            raise ValidationError(_("Reference is not valid"))
+        uniq_domain = [("reference", "=", reference)]
+        if record:
+            uniq_domain += [("id", "!=", record.id)]
+        if self.search(uniq_domain):
+            raise ValidationError(_("Reference must be unique"))
 
     def _get_document(self, code):
         # Hook created in order to add check on other models
@@ -111,8 +127,24 @@ class DocumentPage(models.Model):
             template = mako_env.from_string(tools.ustr(content))
             return template.render(self._get_template_variables())
         except Exception:
-            _logger.error("Template from page %s cannot be processed" % self.id)
+            _logger.error(
+                "Template from page with id = %s cannot be processed" % self.id
+            )
             return self.content
 
     def get_raw_content(self):
         return self.with_context(raw_reference=True).get_content()
+
+    @api.model
+    def create(self, vals):
+        if not vals.get("reference"):
+            # Propose a default reference
+            reference = slugify(vals.get("name")).replace("-", "_")
+            try:
+                self._validate_reference(reference=reference)
+                vals["reference"] = reference
+            except ValidationError:
+                # Do not fill reference.
+                pass
+
+        return super(DocumentPage, self).create(vals)
