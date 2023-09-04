@@ -87,7 +87,7 @@ class DocumentPage(models.Model):
     def get_reference(self, code):
         element = self._get_document(code)
         if self.env.context.get("raw_reference", False):
-            return html_escape(element.display_name)
+            return html_escape(element.name)
         text = """<a href="#" class="oe_direct_line"
         data-oe-model="%s" data-oe-id="%s" name="%s">%s</a>
         """
@@ -97,7 +97,7 @@ class DocumentPage(models.Model):
             element._name,
             element and element.id or "",
             code,
-            html_escape(element.display_name or code),
+            html_escape(element.name or code),
         )
         return res
 
