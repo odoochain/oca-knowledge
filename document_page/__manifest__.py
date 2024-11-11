@@ -12,7 +12,7 @@
         "images/create_category.png",
         "images/page_list.png",
         "images/create_page.png",
-        "images/customer_invoice.jpeg",
+        # "images/customer_invoice.jpeg",
         "images/page_history.png",
     ],
     "website": "https://github.com/OCA/knowledge",

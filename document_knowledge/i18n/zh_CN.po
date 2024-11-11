@@ -88,8 +88,8 @@ msgstr ""
 #. module: document_knowledge
 #: model:ir.ui.menu,name:document_knowledge.menu_document_root
 #: model_terms:ir.ui.view,arch_db:document_knowledge.view_knowledge_configuration
-msgid "Knowledge"
-msgstr "知识"
+msgid "My Knowledge"
+msgstr "我的知识"
 
 #. module: document_knowledge
 #: model_terms:ir.ui.view,arch_db:document_knowledge.view_knowledge_configuration
